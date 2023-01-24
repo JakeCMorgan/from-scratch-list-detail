@@ -7,7 +7,7 @@ export function renderGameCard(game) {
     div.classList.add('game-card');
 
     p.textContent = game.name;
-    img.src = `./assets/${game.game_genre.name}.jpeg`;
+    img.src = `./assets/${game.id}.jpg`;
     a.href = `./detail/?id=${game.id}`;
 
     div.append(p, img);

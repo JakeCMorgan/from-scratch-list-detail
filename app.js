@@ -10,7 +10,6 @@ const gameListContainer = document.getElementById('game-list-container');
 /* Events */
 window.addEventListener('load', async () => {
     const games = await getGames();
-
     for (let game of games) {
         const gameEl = renderGameCard(game);
 
