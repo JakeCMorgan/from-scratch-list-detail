@@ -16,3 +16,33 @@ export function renderGameCard(game) {
 
     return a;
 }
+
+export function renderGameDetail(game) {
+    const div = document.createElement('div');
+    const img = document.createElement('img');
+    const nameEl = document.createElement('p');
+    const yearEl = document.createElement('p');
+    const genreEl = document.createElement('p');
+    const yearAndGenreEl = document.createElement('div');
+
+    div.classList.add('game-detail');
+
+    nameEl.textContent = game.name;
+    nameEl.classList.add('name');
+
+    yearEl.textContent = `Release Date: ${game.year}`;
+    yearEl.classList.add('year');
+
+    genreEl.textContent = `${game.game_genre.genre}`;
+    genreEl.classList.add('genre');
+
+    yearAndGenreEl.classList.add('year-and-genre');
+
+    yearAndGenreEl.append(yearEl, genreEl);
+
+    img.src = `../assets/${game.id}.jpg`;
+
+    div.append(nameEl, img, yearAndGenreEl);
+
+    return div;
+}

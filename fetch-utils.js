@@ -10,6 +10,12 @@ export async function getGames() {
     return data;
 }
 
+export async function getGame(id) {
+    const response = await client.from('games').select(`*`).match({ id: id }).single();
+
+    return checkError(response);
+}
+
 function checkError({ data, error }) {
     return error ? console.error(error) : data;
 }
