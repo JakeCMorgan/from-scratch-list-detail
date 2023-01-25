@@ -1,29 +1,32 @@
 :root {
     --background: rgb(224, 234, 247);
-    --header-background: rgb(254, 251, 245);
+    background-color: rgb(41, 41, 41);
     --primary-font: Corbel, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans',
         'Bitstream Vera Sans', 'Liberation Sans', Verdana, 'Verdana Ref', sans-serif;
 }
 
 body {
-    font-family: var(--primary-font);
-    background: var(--background);
-    display: grid;
-    grid-template-rows: auto 1fr;
 }
 
 header {
     position: sticky;
     top: 0;
-    padding: 15px;
-    height: 80px;
-
+    height: 60px;
     display: flex;
     align-items: center;
     gap: 10px;
+    background-color: rgb(22, 22, 22);
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.12), 0 5px 2px rgba(0, 0, 0, 0.24);
+}
 
-    background-color: var(--header-background);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+header a {
+    padding-left: 20px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+a {
+    color: white;
 }
 
 header .logo {
@@ -31,5 +34,78 @@ header .logo {
 }
 
 main {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: rgb(41, 41, 41);
+}
+
+section {
+    background-color: rgb(41, 41, 41);
+    color: white;
+}
+
+#game-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 50px;
+}
+
+.game-card {
+    font-size: 1rem;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95px;
+    height: 300px;
+}
+
+.game-card:hover {
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    transform: scale(1.1) rotate(1deg);
+}
+
+.game-card img {
+    width: 140px;
+    height: 300px;
+    border: solid 3px black;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-detail {
+    background-color: rgb(41, 41, 41);
+}
+
+.game-detail .name {
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-detail .year-and-genre {
+    height: 50px;
+    width: 120%;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-detail img {
+    width: 200px;
+    height: 300px;
+    border: solid 3px black;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
 }

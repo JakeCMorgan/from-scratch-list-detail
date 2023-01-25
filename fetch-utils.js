@@ -5,13 +5,17 @@ const SUPABASE_KEY =
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export async function getGames() {
-    const { data, error } = await client.from('games').select(`*`);
+    const { data, error } = await client.from('games').select(`*, game_genre (genre)`);
     if (error) console.error(error);
     return data;
 }
 
 export async function getGame(id) {
-    const response = await client.from('games').select(`*`).match({ id: id }).single();
+    const response = await client
+        .from('games')
+        .select(`*, game_genre (genre)`)
+        .match({ id: id })
+        .single();
 
     return checkError(response);
 }
